@@ -5,9 +5,7 @@ Implementing the stochastic gradient descent learning algorithm for a
 feedforward neural network.
 
 Improvements include the addition of the cross-entropy cost function,
-regularization, and better initialization of network weights.  Focused on making the code simple, 
-easily readable, and easily modifiable.  It is not optimized, and omits many desirable
-features.
+regularization, and better initialization of network weights.
 
 """
 
@@ -110,8 +108,7 @@ class Network(object):
         biases are only ever used in computing the outputs from later
         layers.
 
-        This weight and bias initializer uses the same approach as in
-        Chapter 1, and is included for purposes of comparison.  It
+        It
         will usually be better to use the default weight initializer
         instead.
 
@@ -234,7 +231,7 @@ class Network(object):
         nabla_b[-1] = delta
         nabla_w[-1] = np.dot(delta, activations[-2].transpose())
         # Note that the variable l in the loop below is used a little
-        # differently to the notation in Chapter 2 of the book.  Here,
+        # differently to the notation. Here,
         # l = 1 means the last layer of neurons, l = 2 is the
         # second-last layer, and so on.  It's a renumbering of the
         # scheme in the book, used here to take advantage of the fact
